@@ -8,6 +8,7 @@ import java.util.List;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.font.Standard14Fonts;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,9 +21,9 @@ public class TestProjectionProfile {
 	public void setUpProjectionProfile() {
 		PDPage pdPage = new PDPage();
 		PDDocument pdDocument = new PDDocument();
-		
-		TextElement textElement = new TextElement(5f, 15f, 10f, 20f, PDType1Font.HELVETICA, 1f, "test", 1f);
-		TextElement textElement2 = new TextElement(5f, 15f, 10f, 20f, PDType1Font.HELVETICA, 1f, "test", 1f);
+        
+		TextElement textElement = new TextElement(5f, 15f, 10f, 20f, new PDType1Font(Standard14Fonts.FontName.HELVETICA), 1f, "test", 1f);
+		TextElement textElement2 = new TextElement(5f, 15f, 10f, 20f, new PDType1Font(Standard14Fonts.FontName.HELVETICA), 1f, "test", 1f);
 		List<TextElement> textList = new ArrayList<>();
 		textList.add(textElement);
 		textList.add(textElement2);

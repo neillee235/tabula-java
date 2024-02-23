@@ -87,7 +87,7 @@ A simple Java code example which extracts all rows and cells from all tables of 
 
 ```java
 InputStream in = this.getClass().getResourceAsStream("my.pdf");
-try (PDDocument document = PDDocument.load(in)) {
+try (PDDocument document = Loader.loadPDF(in)) {
     SpreadsheetExtractionAlgorithm sea = new SpreadsheetExtractionAlgorithm();
     PageIterator pi = new ObjectExtractor(document).extract();
     while (pi.hasNext()) {
